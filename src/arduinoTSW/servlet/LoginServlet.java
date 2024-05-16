@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		try(PrintWriter out = response.getWriter())
 		{
-			
+			out.print("LOGIN WHIT SERVLET");
 		}
 	}
 
