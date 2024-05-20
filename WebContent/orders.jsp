@@ -1,5 +1,17 @@
+<%@page import="arduinoTSW.connection.DbCon" %>
+<%@page import="arduinoTSW.model.*" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+    <%
+    User auth =(User) request.getSession().getAttribute("auth");
+    if(auth!=null){
+    	request.setAttribute("auth",auth);
+    }
+    else{
+    	response.sendRedirect("login.jsp");
+    }
+    %>
 <!DOCTYPE html>
 <html>
 <head>
