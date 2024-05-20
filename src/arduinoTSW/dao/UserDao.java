@@ -23,7 +23,7 @@ public class UserDao {
 		User user = null;
 		try {
 			
-			query = "select * from users where email = ? and password = ?";
+			query = "select * from users where email = ? and password = ?"; //prevent injections
 			pst = this.con.prepareStatement(query);
 			pst.setString(1, email);
 			pst.setString(2, password);

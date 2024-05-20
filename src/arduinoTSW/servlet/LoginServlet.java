@@ -29,6 +29,7 @@ public class LoginServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		try(PrintWriter out = response.getWriter())
 		{
+			
 			String email = request.getParameter("login-email");
 			String password = request.getParameter("login-password");
 			

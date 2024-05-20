@@ -8,6 +8,8 @@
 <%@include file="includes/header.jsp"%>
 </head>
 <body>
+	<%@include file="includes/NavBar.jsp" %>
+
 	<div class="container">
 		<div class="card w-50 mx-auto my-5">
 			<div class="card-header text-center">User Login</div>
