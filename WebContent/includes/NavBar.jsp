@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 	<div class="container">
-		<a class="navbar-brand" href="index.jsp">PanGocciole</a>
+		<a class="navbar-brand" href="index.jsp">Super Arduino</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -16,7 +16,7 @@
 			
 
 				<%
-				if (auth != null) {
+				if (auth != null) { //ignoriamo questo errore 
 				%>
 				<li class="nav-item"><a class="nav-link" href="orders.jsp">Orders</a></li>
 				<li class="nav-item"><a class="nav-link" href="cart.jsp">Cart</a></li>
@@ -25,8 +25,7 @@
 				} else {
 				%>
 				<li class="nav-item"><a class="nav-link" href="login.jsp">Login</a></li>
-				
-				</li>
+			
 				<%
 				}
 				%>
