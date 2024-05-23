@@ -92,9 +92,9 @@ if(cart_list != null){
 									<input type="text" name="quantity" class="form-control"
 										value="1" readonly style="width: 40px; height: 30px">
 									<div class="vertical-buttons" role="group">
-										<a class="btn btn-sm btn-incre" href=""><i
+										<a class="btn btn-sm btn-incre" href="quantity-inc-dec"><i
 											class="fas fa-plus-square"></i></a> <a
-											class="btn btn-sm btn-decre" href=""><i
+											class="btn btn-sm btn-decre" href="quantity-inc-dec"><i
 											class="fas fa-minus-square"></i></a>
 									</div>
 
