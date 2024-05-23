@@ -1,6 +1,9 @@
 <%@page import="arduinoTSW.connection.DbCon"%>
 
 <%@page import="arduinoTSW.model.*"%>
+<%@page import="arduinoTSW.dao.*"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
@@ -12,6 +15,16 @@ if (auth != null) {
 } else {
 	response.sendRedirect("login.jsp");
 }
+
+ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+List<Cart> cartProduct = null;
+if(cart_list != null){
+	ProductDao pDao = new ProductDao(DbCon.getConnection());
+	cartProduct=pDao.getCartProducts(cart_list);
+	request.setAttribute("cart_list",cart_list);
+}
+
+
 %>
 <!DOCTYPE html>
 <html>
@@ -63,28 +76,34 @@ if (auth != null) {
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>Prodotto 1</td>
-					<td>Categoria 1</td>
-					<td>Prezzo</td>
-					<td>
-						<form method="post" class="form-inline" action="">
-							<input type="hidden" name="id" value="1" class="form-import">
-							<div class="form-group d-flex justify-content-between">
-								<input type="text" name="quantity" class="form-control"
-									value="1" readonly style="width: 40px; height: 30px">
-								<div class="vertical-buttons" role="group">
-									<a class="btn btn-sm btn-incre" href=""><i
-										class="fas fa-plus-square"></i></a> <a
-										class="btn btn-sm btn-decre" href=""><i
-										class="fas fa-minus-square"></i></a>
-								</div>
+			<% if(cart_list != null){
+				for(Cart c:cartProduct){%>
+					
+					<tr>
+						<td><%=c.getName() %></td>
+						<td><%=c.getCategory() %></td>
+						<td><%=c.getPrice() %></td>
+						<td>
+							<form method="post" class="form-inline" action="">
+								<input type="hidden" name="id" value=<%=c.getId() %> class="form-import">
+								<div class="form-group d-flex justify-content-between">
+									<input type="text" name="quantity" class="form-control"
+										value="1" readonly style="width: 40px; height: 30px">
+									<div class="vertical-buttons" role="group">
+										<a class="btn btn-sm btn-incre" href=""><i
+											class="fas fa-plus-square"></i></a> <a
+											class="btn btn-sm btn-decre" href=""><i
+											class="fas fa-minus-square"></i></a>
+									</div>
 
-							</div>
-						</form>
-					</td>
-					<td><a class="btn btn-sm btn-danger" href="">Remove</a></td>
-				</tr>
+								</div>
+							</form>
+						</td>
+						<td><a class="btn btn-sm btn-danger" href="">Remove</a></td>
+					</tr>
+				<% }
+			} %>
+
 			</tbody>
 		</table>
 	</div>
