@@ -42,14 +42,14 @@ public class AddToCartServlet extends HttpServlet {
 			if(cart_list == null)
 			{
 				cartList.add(cm); 
-				session.setAttribute("cart-list", cart_list);
+				session.setAttribute("cart-list", cartList);
 				response.sendRedirect("index.jsp");
 			}else
 			{
 				cartList = cart_list;
 				boolean exist = false;
 				
-				for(Cart c:cartList)
+				for(Cart c:cart_list)
 				{
 					if(c.getId() == id)
 					{
