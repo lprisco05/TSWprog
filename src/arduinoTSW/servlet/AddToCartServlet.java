@@ -43,9 +43,27 @@ public class AddToCartServlet extends HttpServlet {
 			{
 				cartList.add(cm); 
 				session.setAttribute("cart-list", cart_list);
-				out.println("session created and added the list");
+				response.sendRedirect("index.jsp");
+			}else
+			{
+				cartList = cart_list;
+				boolean exist = false;
+				
+				for(Cart c:cartList)
+				{
+					if(c.getId() == id)
+					{
+						exist = true;
+						out.println("<h3 style='color:crimson; text-align:center'> Item already exist in Cart. <a href='cart.jsp'> Go to Cart Page</a");
+					}
+				}
+				if(!exist)
+				{
+					cartList.add(cm);
+					response.sendRedirect("index.jsp");
+					
+				}
 			}
-			
 		}
 		
 	}
