@@ -21,7 +21,9 @@ List<Cart> cartProduct = null;
 if(cart_list != null){
 	ProductDao pDao = new ProductDao(DbCon.getConnection());
 	cartProduct=pDao.getCartProducts(cart_list);
+	double total = pDao.getTotalCartPrice(cart_list);
 	request.setAttribute("cart_list",cart_list);
+	request.setAttribute("total", total);
 }
 
 
@@ -62,7 +64,7 @@ if(cart_list != null){
 
 	<div class="container">
 		<div class="d-flex py-3">
-			<h3>Total Price: $ 666</h3>
+			<h3>Total Price: $ ${ (total > 0)?total:0 }</h3>
 			<a class="mx-3 btn btn-primary" href="#">CheckOut</a>
 		</div>
 		<table class="table table-light">

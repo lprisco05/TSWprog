@@ -1,3 +1,4 @@
+<%@page import="java.util.*" %>
 <%@page import="arduinoTSW.connection.DbCon" %>
 <%@page import="arduinoTSW.model.*" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -10,6 +11,12 @@
     }
     else{
     	response.sendRedirect("login.jsp");
+    }
+    
+    ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+
+    if(cart_list != null){
+    	request.setAttribute("cart_list",cart_list);
     }
     %>
 <!DOCTYPE html>
