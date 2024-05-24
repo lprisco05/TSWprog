@@ -22,13 +22,14 @@ public class QuantityIncDecServlet extends HttpServlet {
 		try (PrintWriter out = response.getWriter()) {
 			String action = request.getParameter("action");
 			int id = Integer.parseInt(request.getParameter("id"));
+			boolean found = false;
 			ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
 
 			if (action != null && id >= 1) {
 				if (action.equals("inc")) {
 					for (Cart c : cart_list) {
 						if (c.getId() == id) {
-							
+							found=true;
 							c.setQuantity(c.getQuantity()+1);
 							response.sendRedirect("cart.jsp");
 						}
@@ -38,13 +39,20 @@ public class QuantityIncDecServlet extends HttpServlet {
 				if (action.equals("dec")) {
 					for (Cart c : cart_list) {
 						if (c.getId() == id && c.getQuantity() > 1) {
+							found=true;
 							c.setQuantity(c.getQuantity()-1);
 						}
 					}
 					response.sendRedirect("cart.jsp");
 				}
-			} else {
+				if(found==false) {
+					response.sendRedirect("cart.jsp");
+				}
+				
+			} else  {
+			
 				response.sendRedirect("cart.jsp");
+				
 			}
 		}
 	}
