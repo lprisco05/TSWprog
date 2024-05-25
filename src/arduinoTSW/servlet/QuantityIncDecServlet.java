@@ -49,6 +49,7 @@ public class QuantityIncDecServlet extends HttpServlet {
 						RequestDispatcher dispatcher = request.getRequestDispatcher("/remove-from-cart");
 						dispatcher.forward(request, response);
 						return;
+						
 					}
 					response.sendRedirect("cart.jsp");
 				}
