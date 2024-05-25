@@ -25,7 +25,6 @@ public class QuantityIncDecServlet extends HttpServlet {
 			int quantity = -1;
 			String action = request.getParameter("action");
 			int id = Integer.parseInt(request.getParameter("id"));
-			System.out.println("huh?" + id);
 			ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
 
 			if (action != null && id >= 1) {

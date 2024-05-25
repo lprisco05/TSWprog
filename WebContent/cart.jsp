@@ -10,7 +10,7 @@
 
 <%
 DecimalFormat dcf = new DecimalFormat("#.##");
-request.setAttribute("dcf",dcf);
+request.setAttribute("dcf", dcf);
 User auth = (User) request.getSession().getAttribute("auth");
 if (auth != null) {
 	request.setAttribute("auth", auth);
@@ -89,24 +89,29 @@ if (cart_list != null) {
 					<td><%=c.getCategory()%></td>
 					<td><%=dcf.format(c.getPrice())%></td>
 					<td>
-						<form method="post" class="form-inline" action="">
+						<form method="post" class="form-inline" action="order-now">
 							<input type="hidden" name="id" value=<%=c.getId()%>
 								class="form-import">
 							<div class="form-group d-flex justify-content-between">
 								<input type="text" name="quantity" class="form-control"
-									value=<%=c.getQuantity() %> readonly style="width: 40px; height: 30px">
+									value=<%=c.getQuantity()%> readonly
+									style="width: 40px; height: 30px">
 								<div class="vertical-buttons" role="group">
 									<a class="btn btn-sm btn-incre"
 										href="quantity-inc-dec?action=inc&id=<%=c.getId()%>"><i
 										class="fas fa-plus-square"></i></a> <a
-										class="btn btn-sm btn-decre" href="quantity-inc-dec?action=dec&id=<%=c.getId()%>"><i
+										class="btn btn-sm btn-decre"
+										href="quantity-inc-dec?action=dec&id=<%=c.getId()%>"><i
 										class="fas fa-minus-square"></i></a>
 								</div>
-
 							</div>
+							<div
+								style="width: 20px; height: 20px; background-color: transparent; border: 1px solid transparent;"></div>
+							<button type="submit" class="btn btn-primary btn-sm">Buy</button>
 						</form>
 					</td>
-					<td><a class="btn btn-sm btn-danger" href="remove-from-cart?id=<%= c.getId() %>">Remove</a></td>
+					<td><a class="btn btn-sm btn-danger"
+						href="remove-from-cart?id=<%=c.getId()%>">Remove</a></td>
 				</tr>
 				<%
 				}
