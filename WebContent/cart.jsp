@@ -66,7 +66,7 @@ if (cart_list != null) {
 	<div class="container">
 		<div class="d-flex py-3">
 			<h3>Total Price: $ ${ (total > 0)?dcf.format(total):0 }</h3>
-			<a class="mx-3 btn btn-primary" href="#">CheckOut</a>
+			<a class="mx-3 btn btn-primary" href="cart-check-out">CheckOut</a>
 		</div>
 		<table class="table table-light">
 			<thead>
