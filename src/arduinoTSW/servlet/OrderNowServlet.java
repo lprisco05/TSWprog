@@ -30,9 +30,13 @@ public class OrderNowServlet extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
   throws ServletException, IOException {
     try (PrintWriter out = response.getWriter()) {
+    	
+    	
+    	
+    	
+    	
       SimpleDateFormat formatData = new SimpleDateFormat("yyyy-MM-dd");
       Date date = new Date();
-
       User user = (User) request.getSession().getAttribute("auth");
       if (user != null) {
         String productID = request.getParameter("id");
