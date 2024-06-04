@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -14,7 +19,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 140vh;
+            height: 180vh;
         }
         form {
             background: white;
@@ -61,10 +66,7 @@
 </head>
 
 <body>
-    <form>
-
-		
-		
+    <form action="CreditCardServlet" method="post">
         <h1>Inserisci dati pagamento</h1>
         <p>I campi obbligatori sono seguiti da *</p>
         <h3>Informazioni di Contatto</h3>
@@ -87,7 +89,9 @@
         <p>Numero della Carta:* <input type="number" name="card_number" id="card_number" required></p>
         <p>Data di Scadenza:* <input type="date" name="exp_date" id="exp_date" required></p>
         <p>CVV:* <input type="password" name="CVV" id="CVV" required></p>
-        <input type="submit" value="Paga Ora">
+								<div class="text-xcenter">
+						<button type="submit" class="btn btn-primary">Conferma</button>
+					</div>
     </form>
 </body>
 </html>

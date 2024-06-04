@@ -1,0 +1,42 @@
+package arduinoTSW.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/CreditCardServlet")
+public class CreditCardServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+ 
+    public CreditCardServlet() {
+  
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.sendRedirect("details.jsp");
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		if(request.getSession().getAttribute("credit-card")!=null) {
+		out.println(request.getParameter("nome"));
+		out.println(request.getParameter("cognome"));
+		out.println(request.getParameter("indirizzo"));
+		out.println(request.getParameter("citta"));
+		out.println(request.getParameter("cap"));
+		}
+		else {
+			out.print(request.getParameter(""));
+		}
+
+	}
+
+}
