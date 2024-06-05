@@ -27,7 +27,7 @@ public class OrderNowServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try (PrintWriter out = response.getWriter()) {
-			System.out.println("boh ecco credit-card:" + request.getSession().getAttribute("carta"));
+	
 
 
 				SimpleDateFormat formatData = new SimpleDateFormat("yyyy-MM-dd");
@@ -45,11 +45,6 @@ public class OrderNowServlet extends HttpServlet {
 					}
 
 					 else if (request.getSession().getAttribute("carta") != null) {
-						System.out.println("sono di nuovo in ordernowservlet, e credit-card ="
-								+ request.getSession().getAttribute("carta"));
-					
-					
-					
 					String productID = (String) request.getSession().getAttribute("id");
 					int quantity = Integer.parseInt((String)request.getSession().getAttribute("quantity"));
 					if (quantity <= 0)
@@ -63,7 +58,6 @@ public class OrderNowServlet extends HttpServlet {
 
 					OrderDao oDao = new OrderDao(DbCon.getConnection());
 					boolean result = oDao.insertOrder(order);
-					System.out.println("trovato result");
 					if (result) {
 						ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
 						if (cart_list != null) {
@@ -76,13 +70,12 @@ public class OrderNowServlet extends HttpServlet {
 						}
 						
 						if (true) {
-							System.out.println("rimossa carta");
+							
 							request.getSession().removeAttribute("carta");
 						}
 						request.getSession().removeAttribute("op");
 						request.getSession().removeAttribute("quantity");
 						request.getSession().removeAttribute("id");
-						System.out.println("rimosso attributo op");
 						RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 						rd.include(request, response);
 						return;
