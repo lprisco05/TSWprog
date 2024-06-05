@@ -7,6 +7,8 @@
     pageEncoding="ISO-8859-1"%>
     
     <%
+	request.getSession().removeAttribute("op");
+
     DecimalFormat dcf = new DecimalFormat("#.##");
     request.setAttribute("dcf", dcf);
     User auth =(User) request.getSession().getAttribute("auth");

@@ -39,6 +39,7 @@ public class LoginServlet extends HttpServlet {
 				
 				if(user != null)
 				{
+					request.getSession().removeAttribute("carta");
 					request.getSession().setAttribute("auth", user);
 					response.sendRedirect("index.jsp");
 					
