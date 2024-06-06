@@ -14,7 +14,6 @@ public class DbCon {
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ArduinoTSW", "root","topolino05");
-			System.out.print("CONNESSO");
 		}
 		return connection;
 	} 

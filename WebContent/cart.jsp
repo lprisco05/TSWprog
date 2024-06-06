@@ -31,6 +31,7 @@ if (cart_list != null) {
 	request.setAttribute("total", total);
 }
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
