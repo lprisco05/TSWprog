@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 <%@page import="arduinoTSW.model.*"%>
 <%@page import="arduinoTSW.dao.*"%>
 </head>
@@ -9,14 +11,13 @@
 User auth = (User) request.getSession().getAttribute("auth");
 if (auth != null) {
 	request.setAttribute("auth", auth);
-	if(request.getSession().getAttribute("carta")!=null){
+	if (request.getSession().getAttribute("carta") != null) {
 		response.sendRedirect("orders.jsp");
 	}
 
 } else {
 	response.sendRedirect("login.jsp");
 }
-
 %>
 
 <!DOCTYPE html>
@@ -81,7 +82,9 @@ hr {
 	border-top: 1px solid #ccc;
 }
 </style>
+<script src="JavaScript/ccvalidation.js" defer></script>
 </head>
+
 
 <body>
 	<form action="CashOut" method="post">
@@ -116,9 +119,12 @@ hr {
 				<option value="master card">Master Card</option>
 			</select>
 		</p>
+		Numero della Carta:*
 		<p>
-			Numero della Carta:* <input type="number" name="card_number"
-				id="card_number" required>
+			 <input type="tel" name="card_number" id="card_number"
+				placeholder="xxxx-xxxx-xxxx-xxxx"
+				pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" maxlength="19"
+				required>
 		</p>
 		<p>
 			Data di Scadenza:* <input type="date" name="exp_date" id="exp_date"
@@ -128,12 +134,12 @@ hr {
 			CVV:* <input type="password" name="CVV" id="CVV" maxlength="3"
 				pattern="\d{3}" required>
 		</p>
-		
+
 		<div class="container">
-        <label for="myCheckbox">Ricordami:</label>
-        <input type="checkbox" id="myCheckbox" onclick="saveAttribute()">
-    </div>
-		
+			<label for="myCheckbox">Ricordami:</label> <input type="checkbox"
+				id="rembemberCard">
+		</div>
+
 		<div class="text-xcenter">
 			<button type="submit" class="btn btn-primary">Conferma</button>
 		</div>
