@@ -18,6 +18,10 @@
             if (newPassword.value !== confirmPassword.value) {
                 alert("Le password non corrispondono. Riprova.");
                 event.preventDefault(); // Blocca l'invio del form se le password non corrispondono
+                else if(newPassword.length()<6){
+                	alert("La nuova password deve essere almeno 6 caratteri");
+                    event.preventDefault(); // Blocca l'invio del form se le password non corrispondono
+                }
             }
         });
     });

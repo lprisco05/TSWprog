@@ -35,16 +35,15 @@ public class ChangePasswordServlet extends HttpServlet {
 			PreparedStatement pst = con.prepareStatement(query);
 			String nuovaPassword=(String) request.getParameter("newPassword");
 			System.out.print(nuovaPassword);
-			if(nuovaPassword==null) {
-				System.out.println("LMAOOOOOOOOO");
-				throw new SQLException();}
+			if(nuovaPassword==null) 
+				throw new SQLException();
 			pst.setString(1, nuovaPassword);
 			pst.setString(2, String.valueOf(auth.getId()));
 			
 			pst.executeUpdate();
 			
 	
-	        
+	        pst.close();
 	        response.sendRedirect("user.jsp");
 
 	       
