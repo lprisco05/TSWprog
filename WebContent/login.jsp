@@ -31,47 +31,41 @@ if (cart_list != null) {
 </head>
 <body>
 	<%@include file="includes/NavBar.jsp"%>
-	
-
-
 
 	<div class="container">
 		<div class="card w-50 mx-auto my-5">
 			<div class="card-header text-center">User Login</div>
 			<div class="card-body">
-				<form action="user-login" method="post">
+				<form action="user-login" method="post" id="login-form">
 
 					<div class="form-group">
-						<label>Email Address</label> <input type="email"
+						<label>Email Address</label> <input type="text"
 							class="form-control" name="login-email" id="email-input"
 							placeholder="Enter your Email">
-
+						<div id="email-error" class="text-danger"></div>
 					</div>
 
 					<div class="form-group">
 						<label>Password</label> <input type="password"
 							class="form-control" name="login-password"
 							placeholder="**********">
-
+						<div id="password-error" class="text-danger"></div>
 					</div>
 
 					<div>
-						<div>
-							<button type="submit" class="btn btn-primary" name="login-button">Login</button>
-
-						</div>
+						<button type="submit" class="btn btn-primary" name="login-button">Login</button>
+					</div>
 				</form>
 
-				New User?<br></>
+				New User?<br>
 				<button id="register-button" class="btn btn-primary"
 					name="register-button">Register</button>
-
 			</div>
-	<script src="JavaScript/loginvalidation.js"></script>
-
 		</div>
 	</div>
-	</div>
+	<script src="JavaScript/loginvalidation.js"></script>
+
 	<%@include file="includes/footer.jsp"%>
 </body>
+
 </html>

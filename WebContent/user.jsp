@@ -12,16 +12,18 @@
     document.addEventListener("DOMContentLoaded", function() {
         var newPassword = document.getElementById("new-password");
         var confirmPassword = document.getElementById("confirm-password");
+        var newPasswordError = document.getElementById("new-password-error");
         var form = document.querySelector("form");
 
         form.addEventListener("submit", function(event) {
+            newPasswordError.textContent = ""; // Resetta il messaggio di errore
+
             if (newPassword.value !== confirmPassword.value) {
-                alert("Le password non corrispondono. Riprova.");
+                newPasswordError.textContent = "Le password non corrispondono";
                 event.preventDefault(); // Blocca l'invio del form se le password non corrispondono
-                else if(newPassword.length()<6){
-                	alert("La nuova password deve essere almeno 6 caratteri");
-                    event.preventDefault(); // Blocca l'invio del form se le password non corrispondono
-                }
+            } else if (newPassword.value.length < 6) {
+                newPasswordError.textContent = "La nuova password deve essere almeno 6 caratteri";
+                event.preventDefault(); // Blocca l'invio del form se la password è troppo corta
             }
         });
     });
@@ -45,7 +47,7 @@ try {
 
 	if (con != null) {
 		UserDao authDao = new UserDao(con);
-}
+	}
 } catch (ClassNotFoundException | SQLException e) {
 	e.printStackTrace();
 	out.println("Errore di connessione al database.");
@@ -56,12 +58,9 @@ try {
 <!DOCTYPE html>
 <html>
 <head>
-
-
 <meta charset="UTF-8">
 <title>Dettagli Utente</title>
 <%@include file="includes/header.jsp"%>
-
 <%@include file="includes/NavBar.jsp"%>
 
 <style>
@@ -71,16 +70,14 @@ body {
 	margin: 0;
 	padding: 0;
 }
-    label {
-        width: 150px; /* Imposta la larghezza dei label */
-        display: inline-block;
-        text-align: left; /* Allinea il testo dei label a destra */
-    }
-
-    input[type="password"] {
-        width: 200px; /* Imposta la larghezza dei campi di input */
-    }
-
+label {
+	width: 150px;
+	display: inline-block;
+	text-align: left;
+}
+input[type="password"] {
+	width: 200px;
+}
 .container {
 	max-width: 600px;
 	margin: 50px auto;
@@ -89,21 +86,22 @@ body {
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 h1 {
 	text-align: center;
 }
-
 .user-details {
 	margin-top: 20px;
 }
-
 .detail {
 	margin-bottom: 10px;
 }
-
 .detail label {
 	font-weight: bold;
+}
+.error-message {
+	color: red;
+	font-size: 14px;
+	margin-top: 5px;
 }
 </style>
 </head>
@@ -111,18 +109,15 @@ h1 {
 	<div class="container">
 		<h1>Dettagli Utente</h1>
 		<div class="user-details">
-			<h4 class="nome">
-				Nome: <%=auth.getName()%>
-			</h4>
-			<h4 class="email">
-				Email: <%=auth.getEmail()%>
-			</h4>
+			<h4 class="nome">Nome: <%=auth.getName()%></h4>
+			<h4 class="email">Email: <%=auth.getEmail()%></h4>
 		</div>
 		<div class="change-password">
 			<h2>Cambia Password</h2>
 			<form action="ChangePasswordServlet" method="post">
 				<label for="new-password">Nuova Password:</label>
 				<input type="password" id="new-password" name="newPassword" required><br>
+				<span id="new-password-error" class="error-message"></span><br>
 				<label for="confirm-password">Conferma Password:</label>
 				<input type="password" id="confirm-password" name="confirmPassword" required><br>
 				<button type="submit">Modifica password</button>

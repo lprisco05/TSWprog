@@ -1,4 +1,3 @@
-
 document.getElementById('reg-name').focus();
 document.addEventListener("DOMContentLoaded", function() {
 	// Seleziona il form e aggiungi un evento di submit
@@ -23,19 +22,21 @@ document.addEventListener("DOMContentLoaded", function() {
 		if (!emailIsValid || !passwordIsValid || !nameIsValid) {
 			event.preventDefault(); // Impedisce l'invio del form
 
-			// Crea un elemento per mostrare il messaggio di errore
-			let errorMessage = '';
+			// Reset error messages
+			document.getElementById('name-error').textContent = '';
+			document.getElementById('email-error').textContent = '';
+			document.getElementById('password-error').textContent = '';
+
+			// Mostra messaggi di errore
 			if (!nameIsValid) {
-				errorMessage += 'Please enter your full name.\n';
+				document.getElementById('name-error').textContent = 'Please enter your full name.';
 			}
 			if (!emailIsValid) {
-				errorMessage += 'Please enter a valid email address.\n';
+				document.getElementById('email-error').textContent = 'Please enter a valid email address.';
 			}
 			if (!passwordIsValid) {
-				errorMessage += 'Password must be at least 6 characters long.\n';
+				document.getElementById('password-error').textContent = 'Password must be at least 6 characters long.';
 			}
-
-			alert(errorMessage); // Mostra l'errore in un alert
 		}
 	});
 });
