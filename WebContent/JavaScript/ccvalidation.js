@@ -1,3 +1,6 @@
+	document.getElementById('nome').focus();
+
+
 document.addEventListener('DOMContentLoaded', function() {
 	const form = document.querySelector('form');
 	const nomeInput = document.querySelector('input[name="nome"]');
@@ -9,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	const expDateInput = document.getElementById('exp_date');
 	const cvvInput = document.getElementById('CVV');
 	const rememberCheckbox = document.getElementById('myCheckbox');
+	
+	
 
 
 	document.getElementById('card_number').addEventListener('input', function (e) {
@@ -69,9 +74,12 @@ document.addEventListener('DOMContentLoaded', function() {
 			return;
 		}
 
+
+
 		// Check card number length
-		if (cardNumber.length !== 16) {
-			alert('Il numero della carta deve essere di 16 cifre.');
+		if (cardNumber.length !== 19) {
+			console.log('cc')
+			alert('Il numero della carta deve essere di 16 cifre, hai inserito' + cardNumber.length + 'cifre');
 			event.preventDefault();
 			return;
 		}
@@ -91,6 +99,9 @@ document.addEventListener('DOMContentLoaded', function() {
 			event.preventDefault();
 			return;
 		}
+		
+		
+		
 	});
 
 

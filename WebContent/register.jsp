@@ -19,7 +19,7 @@
                 
                     <div class="form-group">
                         <label>Full Name</label>
-                        <input type="text" class="form-control" name="login-name" placeholder="Enter your full name" required>
+                        <input type="text" class="form-control" id="reg-name" name="login-name" placeholder="Enter your full name" required>
                     </div>
 
                     <div class="form-group">

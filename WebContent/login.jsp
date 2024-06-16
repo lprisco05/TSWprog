@@ -18,6 +18,10 @@ if (cart_list != null) {
 	request.setAttribute("cart_list", cart_list);
 }
 %>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +31,8 @@ if (cart_list != null) {
 </head>
 <body>
 	<%@include file="includes/NavBar.jsp"%>
-	<script src="JavaScript/loginvalidation.js"></script>
+	
+
 
 
 	<div class="container">
@@ -38,7 +43,7 @@ if (cart_list != null) {
 
 					<div class="form-group">
 						<label>Email Address</label> <input type="email"
-							class="form-control" name="login-email"
+							class="form-control" name="login-email" id="email-input"
 							placeholder="Enter your Email">
 
 					</div>
@@ -51,7 +56,7 @@ if (cart_list != null) {
 					</div>
 
 					<div>
-						<div >
+						<div>
 							<button type="submit" class="btn btn-primary" name="login-button">Login</button>
 
 						</div>
@@ -62,6 +67,7 @@ if (cart_list != null) {
 					name="register-button">Register</button>
 
 			</div>
+	<script src="JavaScript/loginvalidation.js"></script>
 
 		</div>
 	</div>

@@ -1,5 +1,5 @@
-// registration-validation.js
 
+document.getElementById('reg-name').focus();
 document.addEventListener("DOMContentLoaded", function() {
 	// Seleziona il form e aggiungi un evento di submit
 	const form = document.getElementById('registration-form');

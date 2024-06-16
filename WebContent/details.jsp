@@ -92,7 +92,7 @@ hr {
 		<p>I campi obbligatori sono seguiti da *</p>
 		<h3>Informazioni di Contatto</h3>
 		<p>
-			Nome:* <input type="text" name="nome" required>
+			Nome:* <input type="text" name="nome" id="nome" required>
 		</p>
 		<p>
 			Cognome:* <input type="text" name="cognome" required>

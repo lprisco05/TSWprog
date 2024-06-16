@@ -1,3 +1,4 @@
+ document.getElementById('email-input').focus();
 document.addEventListener("DOMContentLoaded", function() {
     // Seleziona il form e aggiungi un evento di submit
     const form = document.querySelector('form');
