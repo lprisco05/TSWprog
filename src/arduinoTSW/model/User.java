@@ -6,6 +6,7 @@ public class User {
 	private String name;
 	private String email;
 	private String password;
+	private Boolean admin;
 	
 	
 	
@@ -16,14 +17,14 @@ public class User {
 
 
 
-
+/*
 	public User(int id, String name, String email, String password) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
 	}
-
+*/
 
 
 
@@ -80,6 +81,19 @@ public class User {
 		this.password = password;
 	}
 
+	
+
+
+
+	public Boolean getAdmin() {
+		return admin;
+	}
+
+
+
+	public void setAdmin(Boolean admin) {
+		this.admin = admin;
+	}
 
 
 

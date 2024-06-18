@@ -35,11 +35,12 @@ public class RegisterServlet extends HttpServlet {
 			String passUtente= request.getParameter("login-password");
 			
 			
-			String query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)"; //prevent injections
+			String query = "INSERT INTO users (name, email, password, admin) VALUES (?, ?, ?, ?)"; //prevent injections
 			PreparedStatement statement = con.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
 			statement.setString(1, nomeUtente);
 		    statement.setString(2, emailUtente);
 		    statement.setString(3, passUtente);
+		    statement.setBoolean(4, false);
 			
 			
 		    int rows = statement.executeUpdate();

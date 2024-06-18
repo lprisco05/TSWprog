@@ -5,16 +5,18 @@ public class Order extends Product {
 	private int uid;
 	private int quantity;
 	private String date;
+	private float total;
 	
 	public Order() {	
 	}
 
-	public Order(int orderId, int uid, int quantity, String date) {
+	public Order(int orderId, int uid, int quantity, String date,float total) {
 		super();
 		this.orderId = orderId;
 		this.uid = uid;
 		this.quantity = quantity;
 		this.date = date;
+		this.total=total;
 	}
 
 	public Order(int uid, int quantity, String date) {
