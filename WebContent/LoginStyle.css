@@ -1,0 +1,8 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.navbar-light.bg-light {
+    background-color:  #00FFFF !important; 
+}
