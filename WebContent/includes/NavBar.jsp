@@ -3,7 +3,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link rel = "stylesheet" href = "NavBarStyle.css">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id = "box">
 
 	<div class="container">
 		<a class="navbar-brand" href="index.jsp">Super Arduino</a>

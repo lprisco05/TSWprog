@@ -37,7 +37,6 @@ if (cart_list != null) {
 <link rel = "stylesheet" href = "LoginStyle.css">
 </head>
 <body>
-<div class = "box">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 	<div class="container">
@@ -96,7 +95,6 @@ if (cart_list != null) {
 	<script src="JavaScript/loginvalidation.js"></script>
 
 	<%@include file="includes/footer.jsp"%>
-</div>
 </body>
 
 </html>
