@@ -25,6 +25,11 @@ if (cart_list != null) {
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <%@include file="includes/header.jsp"%>
@@ -32,6 +37,7 @@ if (cart_list != null) {
 <link rel = "stylesheet" href = "LoginStyle.css">
 </head>
 <body>
+<div class = "box">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 	<div class="container">
@@ -90,6 +96,7 @@ if (cart_list != null) {
 	<script src="JavaScript/loginvalidation.js"></script>
 
 	<%@include file="includes/footer.jsp"%>
+</div>
 </body>
 
 </html>
