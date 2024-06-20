@@ -1,5 +1,9 @@
+DROP schema if exists arduinotsw;
+CREATE schema arduinotsw;
+use arduinotsw;
+
 CREATE TABLE users (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     admin boolean not null,
@@ -23,4 +27,7 @@ CREATE TABLE orders (
     price_at_purchase DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (u_id) REFERENCES Users(id)
 );
+
+INSERT INTO `users` VALUES (1,'admin','admin@mail.it',1,'asdqwe123');
+INSERT INTO `users` VALUES (2,'utente','utente@mail.it',0,'asdqwe123');
 
