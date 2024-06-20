@@ -20,13 +20,15 @@ public class OrderDao {
 	public boolean insertOrder(Order model) {
 		boolean result = false;
 		try {
-			query = "insert into orders(p_id, u_id, o_quantity, o_date,total) values(?,?,?,?,?)";
-			pst = this.con.prepareStatement(query);
-			pst.setInt(1, model.getId());
+			
+			//o_id p_id u_id o_quantity o_date price_at_purchase
+			query = "insert into orders (p_name, u_id, o_quantity, o_date, price_at_purchase) values(?,?,?,?,?)";
+			pst = this.con.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
+			pst.setString(1, model.getName());
 			pst.setInt(2, model.getUid());
 			pst.setInt(3, model.getQuantity());
 			pst.setString(4,model.getDate());
-			pst.setDouble(5, model.getQuantity()*model.getPrice());
+			pst.setDouble(5,model.getTotal());
 			pst.executeUpdate();
 			result=true;
 			
@@ -36,7 +38,7 @@ public class OrderDao {
 		
 		return result;
 	}
-	public List<Order> userOrders(int id)
+	public List<Order> userOrders(int Userid)
 	{
 		List<Order> list = new ArrayList<>();
 		
@@ -44,21 +46,19 @@ public class OrderDao {
 		{
 			query = "select * from orders where u_id = ? order by orders.o_id desc";
 			pst = this.con.prepareStatement(query);
-			pst.setInt(1,  id);
+			pst.setInt(1,  Userid);
 			rs = pst.executeQuery();
 			
 			while(rs.next())
 			{
 				Order order = new Order();
 				ProductDao productDao = new ProductDao(this.con); 
-				int pId = rs.getInt("p_id");
-				//qua fa male perché prendo i prodotti ma nun è cos
-				Product product = productDao.getSingleProduct(pId);
+				//int pId = rs.getInt("p_id");
+				//oid pname uid quantity pricealcomprare
+				//Product product = productDao.getSingleProduct(pId);
 				order.setOrderId(rs.getInt("o_id"));
-				order.setId(pId);
-				order.setName(product.getName());
-				order.setPrice(product.getPrice()*rs.getInt("o_quantity")); 
-				order.setCategory(product.getCategory());
+				order.setName(rs.getString("p_name"));
+				order.setPrice(rs.getDouble("price_at_purchase")); 
 				order.setQuantity(rs.getInt("o_quantity"));
 				order.setDate(rs.getString("o_date"));
 				list.add(order);

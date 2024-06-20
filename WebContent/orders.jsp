@@ -45,7 +45,6 @@ if (cart_list != null) {
 				<tr>
 					<th scope="col">Data</th>
 					<th scope="col">Nome</th>
-					<th scope="col">Categoria</th>
 					<th scope="col">Quantità</th>
 					<th scope="col">Prezzo</th>
 					<th scope="col">Cancellato</th>
@@ -79,7 +78,7 @@ if (cart_list != null) {
 				<tr>
 					<td><%=o.getDate()%></td>
 					<td><%=o.getName()%></td>
-					<td><%=o.getCategory()%></td>
+					
 					<td><%=o.getQuantity()%></td>
 					<td><%=dcf.format(o.getPrice())%></td>
 					<td><a class="btn btn-sm btn-danger"

@@ -33,6 +33,7 @@ public class ProductDao {
 				row.setPrice(rs.getDouble("price"));
 				row.setImage(rs.getString("image"));
 
+				System.out.println(row.toString());
 				products.add(row);
 			}
 

@@ -17,8 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 import arduinoTSW.connection.DbCon;
 import arduinoTSW.model.Cart;
 import arduinoTSW.model.Order;
+import arduinoTSW.model.Product;
 import arduinoTSW.model.User;
 import arduinoTSW.dao.OrderDao;
+import arduinoTSW.dao.ProductDao;
 
 @WebServlet("/order-now")
 public class OrderNowServlet extends HttpServlet {
@@ -50,13 +52,20 @@ public class OrderNowServlet extends HttpServlet {
 					if (quantity <= 0)
 						quantity = 1;
 
+					OrderDao oDao = new OrderDao(DbCon.getConnection());
+					ProductDao pDao = new ProductDao(DbCon.getConnection());
+					Product prodotto = pDao.getSingleProduct(Integer.parseInt(productID));
+					
 					Order order = new Order();
-					order.setId(Integer.parseInt(productID));
+					//o_id p_id u_id o_quantity o_date price_at_purchase
+					//order.setOrderId();
+					order.setName((String)prodotto.getName());
 					order.setUid(user.getId());
 					order.setQuantity(quantity);
 					order.setDate(formatData.format(date));
+					order.setTotal(prodotto.getPrice());
+		
 
-					OrderDao oDao = new OrderDao(DbCon.getConnection());
 					boolean result = oDao.insertOrder(order);
 					if (result) {
 						ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");

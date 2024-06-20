@@ -1,22 +1,26 @@
 package arduinoTSW.model;
 
 public class Order extends Product {
+	//oid pname uid quantity pricealcomprare
 	private int orderId;
 	private int uid;
 	private int quantity;
 	private String date;
-	private float total;
+	private Double total;
+	private String p_name;
 	
 	public Order() {	
 	}
 
-	public Order(int orderId, int uid, int quantity, String date,float total) {
+	//o_id p_id u_id o_quantity o_date price_at_purchase
+
+	public Order(int orderId,int productId, int uid, int quantity, String date,double price_at_purchase) {
 		super();
 		this.orderId = orderId;
 		this.uid = uid;
 		this.quantity = quantity;
 		this.date = date;
-		this.total=total;
+		this.total = price_at_purchase;
 	}
 
 	public Order(int uid, int quantity, String date) {
@@ -62,5 +66,14 @@ public class Order extends Product {
 	public String toString() {
 		return "Order [orderId=" + orderId + ", uid=" + uid + ", quantity=" + quantity + ", date=" + date + "]";
 	}
+
+	public double getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Double double1) {
+		this.total = double1;
+	}
+	
 	
 }

@@ -6,6 +6,7 @@ public class Product {
 	private String category;
 	private double price;
 	private String image;
+
 	
 	
 	public Product() {
