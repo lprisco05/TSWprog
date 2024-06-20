@@ -3,13 +3,6 @@
 	padding: 0;
 }
 
-body{
-	background-image: url('BG.jpg');
-	background-size: cover;
-    background-repeat: repeat;
-    
-}
-
 .navbar {
     font-family: 'Pacifico', cursive;
     color: white;
@@ -28,17 +21,6 @@ body{
 	40%, 60% {
 	text-shadow: none;
 	}
-}
-
-.card-header{
-	background-color: #4169E1;
-	font-family: 'Pacifico', cursive;
-	font-size: 20px;
-}
-.card-body{
-	background-color: #4169E1;
-	font-family: 'Pacifico', cursive;
-	font-size: 20px;
 }
 
 .navbar-light.bg-light
