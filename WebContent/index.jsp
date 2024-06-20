@@ -53,7 +53,7 @@ if (cart_list != null) {
 				for (Product p : products) {
 			%>
 			<div class="col-md-3 my-3">
-				<div class="card w-100" style="width: 18rem;">
+				<div class="card w-100" style="width: 300px; height: 500px;">
 					<img class="card-img-top" src="product-image/<%=p.getImage()%>"
 						alt="Card image cap">
 					<div class="card-body">
