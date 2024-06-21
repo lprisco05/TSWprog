@@ -3,9 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
 <meta charset="ISO-8859-1">
 <title>User Registration</title>
 <%@include file="includes/header.jsp"%>
+
+<link rel = "stylesheet" href = "registerSTYLE.css">
 </head>
 <body>
 	<%
@@ -14,7 +21,7 @@
 	<%@include file="includes/NavBar.jsp"%>
 
 	<div class="container">
-		<div class="card w-50 mx-auto my-5">
+		<div style="background-color:#4169E1" class="card w-50 mx-auto my-5">
 			<div class="card-header text-center">User Registration</div>
 			<div class="card-body">
 				<form action="registration" method="post" id="registration-form">
