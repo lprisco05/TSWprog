@@ -58,6 +58,10 @@ try {
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
 <meta charset="UTF-8">
 <title>Dettagli Utente</title>
 <%@include file="includes/header.jsp"%>
@@ -81,7 +85,7 @@ input[type="password"] {
 .container {
 	max-width: 600px;
 	margin: 50px auto;
-	background-color: #fff;
+	background-color: #4169E1;
 	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -104,6 +108,8 @@ h1 {
 	margin-top: 5px;
 }
 </style>
+
+<link rel = "stylesheet" href = "userSTYLE.css">
 </head>
 <body>
 	<div class="container">
