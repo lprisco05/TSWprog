@@ -135,7 +135,6 @@ public class ProductDao {
 
 			int rowsUpdated = statement.executeUpdate();
 			if (rowsUpdated > 0) {
-				System.out.println("Il prodotto con ID " + product.getId() + " è stato aggiornato con successo.");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

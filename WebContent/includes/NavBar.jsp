@@ -2,6 +2,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link rel = "stylesheet" href = "NavBarStyle.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id = "box">

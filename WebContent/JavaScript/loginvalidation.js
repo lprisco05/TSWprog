@@ -1,53 +1,75 @@
+
+
 document.getElementById('email-input').focus();
+
 document.addEventListener("DOMContentLoaded", function() {
-	// Seleziona il form e aggiungi un evento di submit
-	const form = document.querySelector('form');
-	form.addEventListener('submit', function(event) {
-		// Seleziona il bottone premuto
-		const submitter = event.submitter;
+    const form = document.querySelector('#login-form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Impedisce l'invio del form tradizionale
 
-		// Controlla se il bottone premuto è quello di login
-		if (submitter && submitter.name === 'login-button') {
-			// Seleziona i campi email e password
-			const emailInput = form.querySelector('input[name="login-email"]');
-			const passwordInput = form.querySelector('input[name="login-password"]');
+        // Seleziona il bottone premuto
+        const submitter = event.submitter;
 
-			// RegExp per validare l'email
-			const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-			const emailIsValid = emailPattern.test(emailInput.value);
+        if (submitter && submitter.name === 'login-button') {
+            // Seleziona i campi email e password
+            const emailInput = form.querySelector('input[name="login-email"]');
+            const passwordInput = form.querySelector('input[name="login-password"]');
 
-			// Controlla la lunghezza della password
-			const passwordIsValid = passwordInput.value.length >= 6;
+            // RegExp per validare l'email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailIsValid = emailPattern.test(emailInput.value);
 
-			// Se l'email o la password non sono validi, mostra un messaggio di errore e impedisce l'invio del form
-			if (!emailIsValid || !passwordIsValid) {
-				event.preventDefault(); // Impedisce l'invio del form
+            // Controlla la lunghezza della password
+            const passwordIsValid = passwordInput.value.length >= 6;
 
-				// Reset error messages
-				document.getElementById('email-error').textContent = '';
-				document.getElementById('password-error').textContent = '';
+            // Se l'email o la password non sono validi, mostra un messaggio di errore e impedisce l'invio del form
+            if (!emailIsValid || !passwordIsValid) {
+                // Reset error messages
+                document.getElementById('email-error').textContent = '';
+                
+                document.getElementById('password-error').textContent = '';
 
-				// Mostra messaggi di errore
-				if (!emailIsValid) {
-					document.getElementById('email-error').textContent = 'Please enter a valid email address.';
-				}
-				if (!passwordIsValid) {
-					if (passwordInput.value.length == 0) {
-						document.getElementById('password-error').textContent = 'Inserisci password';
+                // Mostra messaggi di errore
+                if (!emailIsValid) {
+                    document.getElementById('email-error').textContent = 'Please enter a valid email address.';
+                }
+                if (!passwordIsValid) {
+                    if (passwordInput.value.length == 0) {
+	
+                        document.getElementById('password-error').textContent = 'Inserisci password';
 
-					}
-					else {
-						document.getElementById('password-error').textContent = 'Password must be at least 6 characters long.';
-					}
-				}
-			}
-		}
-	});
+                    } else {
+                        document.getElementById('password-error').textContent = 'Password must be at least 6 characters long.';
+                    }
+                }
+            } else {	
+                // Procedi con l'invio AJAX
+                $.ajax({
+                    url: 'user-login',
+                    method: 'POST',
+                    data: {
+                        email: emailInput.value,
+                        password: passwordInput.value
+                    },
+                    success: function(response) {
+                        if (response.trim() === 'success') {
+                            window.location.href = 'index.jsp'; // Reindirizza alla pagina home
+                        } else if (response.trim() === 'failure') {
+						  document.getElementById('password-error').textContent = 'email o password errata!';
 
-	// Gestisce il click del pulsante di registrazione
-	const registerButton = document.querySelector('#register-button');
-	registerButton.addEventListener('click', function(event) {
-		event.preventDefault();
-		location.href = "/Arduino_TSW/register.jsp";
-	});
+                        }
+                    },
+                    error: function() {
+                document.getElementById('password-error').textContent = 'Errore del Server';
+                    }
+                });
+            }
+        }
+    });
+
+    const registerButton = document.querySelector('#register-button');
+    registerButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        location.href = "/Arduino_TSW/register.jsp";
+    });
 });

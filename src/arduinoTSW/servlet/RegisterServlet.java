@@ -49,7 +49,6 @@ public class RegisterServlet extends HttpServlet {
                 ResultSet generatedKeys = statement.getGeneratedKeys();
                 if (generatedKeys.next()) {
                     int userId = generatedKeys.getInt(1);
-                    System.out.println("User registered with ID: " + userId);
                 }
             }
             statement.close();

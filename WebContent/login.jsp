@@ -25,47 +25,56 @@ if (cart_list != null) {
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+	rel="stylesheet">
 
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+
+
+
+<title>Pagina di Login</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <%@include file="includes/header.jsp"%>
-<meta name= "viewport" content ="width = device-width, initial-scale = 1.0">
-<link rel = "stylesheet" href = "LoginStyle.css">
+<meta name="viewport"
+	content="width = device-width, initial-scale = 1.0">
+<link rel="stylesheet" href="LoginStyle.css">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-	<div class="container">
-		<a class="navbar-brand" href="index.jsp">Super Arduino</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent" aria-expanded="false"
-			aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+		<div class="container">
+			<a class="navbar-brand" href="index.jsp">Arduino Buy</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item active"><a class="nav-link"
-					href="index.jsp">Home</a></li>
-				<li class="nav-item"><a class="nav-link" href="cart.jsp">Cart
-						<span class="badge badge-danger px-1">${ cart_list.size() }</span>
-				</a></li>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a class="nav-link"
+						href="index.jsp">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="cart.jsp">Cart
+							<span class="badge badge-danger px-1">${ cart_list.size() }</span>
+					</a></li>
 
-			</ul>
+				</ul>
+			</div>
 		</div>
-	</div>
 	</nav>
 
 	<div class="container">
 		<div class="card w-50 mx-auto my-5">
 			<div class="card-header text-center">User Login</div>
 			<div class="card-body">
-				<form action="user-login" method="post" id="login-form">
+				<form id="login-form">
 
 					<div class="form-group">
 						<label>Email Address</label> <input type="text"
@@ -92,6 +101,7 @@ if (cart_list != null) {
 			</div>
 		</div>
 	</div>
+
 	<script src="JavaScript/loginvalidation.js"></script>
 
 	<%@include file="includes/footer.jsp"%>

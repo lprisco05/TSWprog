@@ -42,7 +42,6 @@ public class UserDao {
 		}catch (Exception e)
 		{
 			e.printStackTrace();
-			System.out.print(e.getMessage());
 			
 		}
 		

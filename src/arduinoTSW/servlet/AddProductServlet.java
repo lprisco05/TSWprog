@@ -44,7 +44,6 @@ public class AddProductServlet extends HttpServlet {
 	                ResultSet generatedKeys = statement.getGeneratedKeys();
 	                if (generatedKeys.next()) {
 	                    int itemId = generatedKeys.getInt(1);
-	                    System.out.println("Item registered with ID: " + itemId);
 	                }
 	            }
 		} catch (Exception e) {

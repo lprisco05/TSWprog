@@ -34,7 +34,6 @@ public class ChangePasswordServlet extends HttpServlet {
 			String query = "UPDATE users SET password = ? WHERE id= ?"; //prevent injections
 			PreparedStatement pst = con.prepareStatement(query);
 			String nuovaPassword=(String) request.getParameter("newPassword");
-			System.out.print(nuovaPassword);
 			if(nuovaPassword==null) 
 				throw new SQLException();
 			pst.setString(1, nuovaPassword);

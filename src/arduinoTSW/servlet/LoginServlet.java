@@ -27,12 +27,13 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html;charset=UTF-8");
-		try(PrintWriter out = response.getWriter())
+		
+		try
 		{
 			
-			String email = request.getParameter("login-email");
-			String password = request.getParameter("login-password");
-			
+			String email = request.getParameter("email");
+			String password = request.getParameter("password");
+					
 			try {
 				UserDao udao = new UserDao(DbCon.getConnection());
 				User user = udao.userLogin(email,password);
@@ -41,22 +42,26 @@ public class LoginServlet extends HttpServlet {
 				{
 					request.getSession().removeAttribute("carta");
 					request.getSession().setAttribute("auth", user);
-					response.sendRedirect("index.jsp");
+					response.getWriter().write("success");
+					//response.sendRedirect("index.jsp");
 					
 				}
-				else
-				{
-					out.print("user login failed");
+				else {
+	                response.getWriter().write("failure");
+
 				}
 				
 				
+			
 			} catch (ClassNotFoundException | SQLException e) {
 				
-				e.printStackTrace();
+				response.getWriter().write("error");
 			}
-			
-			
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
+			
+		
 	}
 
 }

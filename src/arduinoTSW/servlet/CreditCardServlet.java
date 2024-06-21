@@ -35,7 +35,6 @@ public class CreditCardServlet extends HttpServlet {
 		) {// TODO fa un controllo su op
 			request.getSession().setAttribute("carta", "true");
 			String richiesta = (String) request.getSession().getAttribute("op");
-			System.out.println("letto op:" + richiesta);
 
 			try {
 				RequestDispatcher rd = request.getRequestDispatcher(richiesta);
