@@ -39,9 +39,17 @@ else if (auth != null) {
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
 <meta charset="ISO-8859-1">
 <title>Edit Product</title>
 <%@include file="includes/header.jsp"%>
+
+<link rel = "stylesheet" href = "edit-productSTYLE.css">
 </head>
 <body>
 	<%@include file="includes/NavBar.jsp"%>
