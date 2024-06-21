@@ -35,6 +35,10 @@ if (cart_list != null) {
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>carrello</title>
 <%@include file="includes/header.jsp"%>
@@ -62,6 +66,7 @@ if (cart_list != null) {
 	line-height: 0;
 }
 </style>
+<link rel = "stylesheet" href = "CartSTYLE.css">
 </head>
 <body>
 	<%@include file="includes/NavBar.jsp"%>
@@ -71,7 +76,7 @@ if (cart_list != null) {
 			<h3>Total Price: $ ${ (total > 0)?dcf.format(total):0 }</h3>
 			<a class="mx-3 btn btn-primary" href="cart-check-out">CheckOut</a>
 		</div>
-		<table class="table table-light">
+		<table style= "background-color: #4169E1" class="table table-light ">
 			<thead>
 				<tr>
 					<th scope="col">Name</th>
