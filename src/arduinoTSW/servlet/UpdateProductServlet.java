@@ -33,6 +33,8 @@ public class UpdateProductServlet extends HttpServlet  {
 				Connection conn = DbCon.getConnection();
 			      ProductDao productDao = new ProductDao(conn);
 			        productDao.updateProduct(product);
+					response.sendRedirect("index.jsp");
+
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

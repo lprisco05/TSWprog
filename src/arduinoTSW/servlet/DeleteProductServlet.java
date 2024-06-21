@@ -34,7 +34,11 @@ public class DeleteProductServlet extends HttpServlet {
 					Connection conn = DbCon.getConnection();
 				      ProductDao productDao = new ProductDao(conn);
 				        productDao.deleteProduct(Integer.parseInt( request.getParameter("id")));
-				} catch (ClassNotFoundException e) {
+						response.sendRedirect("index.jsp");
+
+	     
+	     
+	     } catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (SQLException e) {

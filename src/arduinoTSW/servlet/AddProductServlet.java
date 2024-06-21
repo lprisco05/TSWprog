@@ -46,6 +46,9 @@ public class AddProductServlet extends HttpServlet {
 	                    int itemId = generatedKeys.getInt(1);
 	                }
 	            }
+		
+		
+		response.sendRedirect("index.jsp");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
