@@ -31,8 +31,6 @@ if (auth != null) {
 <title>Payment Form</title>
 <style>
 body {
-	background-color: lightblue;
-	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
 	display: flex;
