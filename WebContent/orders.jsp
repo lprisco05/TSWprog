@@ -31,16 +31,23 @@ if (cart_list != null) {
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
 <meta charset="ISO-8859-1">
 <title>Orders</title>
 <%@include file="includes/header.jsp"%>
+
+<link rel = "stylesheet" href = "ordersSTYLE.css">
 </head>
 <body>
 	<%@include file="includes/NavBar.jsp"%>
 
 	<div class="container">
 		<div class="card-header my-3">All Orders</div>
-		<table class="table table-light">
+		<table style="background-color:#4169E1" class="table table-light">
 			<thead>
 				<tr>
 					<th scope="col">Data</th>
