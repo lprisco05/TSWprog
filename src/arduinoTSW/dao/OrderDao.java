@@ -87,4 +87,75 @@ public class OrderDao {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
+	public List<Order> getAllOrders() {
+        List<Order> list = new ArrayList<>();
+        try {
+            query = "select * from orders order by orders.o_id desc";
+            pst = this.con.prepareStatement(query);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                Order order = new Order();
+                order.setOrderId(rs.getInt("o_id"));
+                order.setName(rs.getString("p_name"));
+                order.setPrice(rs.getDouble("price_at_purchase"));
+                order.setQuantity(rs.getInt("o_quantity"));
+                order.setDate(rs.getString("o_date"));
+                list.add(order);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+	
+	
+	
+	 public List<Order> getOrdersByDate(String date) {
+	        List<Order> list = new ArrayList<>();
+	        try {
+	            query = "select * from orders where o_date = ? order by orders.o_id desc";
+	            pst = this.con.prepareStatement(query);
+	            pst.setString(1, date);
+	            rs = pst.executeQuery();
+	            while (rs.next()) {
+	                Order order = new Order();
+	                order.setOrderId(rs.getInt("o_id"));
+	                order.setName(rs.getString("p_name"));
+	                order.setPrice(rs.getDouble("price_at_purchase"));
+	                order.setQuantity(rs.getInt("o_quantity"));
+	                order.setDate(rs.getString("o_date"));
+	                list.add(order);
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        return list;
+	    }
+	 
+	 
+	 
+	    public List<Order> getOrdersByUserEmail(String email) {
+	        List<Order> list = new ArrayList<>();
+	        try {
+	            query = "select * from orders o join users u on o.u_id = u.id where u.email = ? order by o.o_id desc";
+	            pst = this.con.prepareStatement(query);
+	            pst.setString(1, email);
+	            rs = pst.executeQuery();
+	            while (rs.next()) {
+	                Order order = new Order();
+	                order.setOrderId(rs.getInt("o_id"));
+	                order.setName(rs.getString("p_name"));
+	                order.setPrice(rs.getDouble("price_at_purchase"));
+	                order.setQuantity(rs.getInt("o_quantity"));
+	                order.setDate(rs.getString("o_date"));
+	                list.add(order);
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        return list;
+	    }
 }

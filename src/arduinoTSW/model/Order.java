@@ -6,7 +6,7 @@ public class Order extends Product {
 	private int uid;
 	private int quantity;
 	private String date;
-	private Double total;
+	private Double total = 696969.0;
 	private String p_name;
 	
 	public Order() {	
@@ -28,6 +28,7 @@ public class Order extends Product {
 		this.uid = uid;
 		this.quantity = quantity;
 		this.date = date;
+		
 	}
 
 	public int getOrderId() {

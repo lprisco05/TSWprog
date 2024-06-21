@@ -48,8 +48,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     url: 'user-login',
                     method: 'POST',
                     data: {
-                        email: emailInput.value,
-                        password: passwordInput.value
+                        'login-email' : emailInput.value,
+                        'login-password' : passwordInput.value
                     },
                     success: function(response) {
                         if (response.trim() === 'success') {

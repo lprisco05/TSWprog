@@ -62,7 +62,6 @@ if (cart_list != null) {
 			if (!products.isEmpty()) {
 
 				for (Product p : products) {
-					System.out.println(p.getImage());
 			%>
 			<div class="col-md-3 my-3">
 				<div class="card w-100"

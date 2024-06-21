@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import arduinoTSW.connection.DbCon;
 import arduinoTSW.dao.OrderDao;
+import arduinoTSW.dao.ProductDao;
 import arduinoTSW.model.*;
 
 /**
@@ -41,12 +42,18 @@ public class CheckOutServlet extends HttpServlet {
 					return;
 				}
 
+				
 				for (Cart c : cart_list) {
+					ProductDao pDao = new ProductDao(DbCon.getConnection());
+					Product prodotto = pDao.getSingleProduct(c.getId());
 					Order order = new Order();
-					order.setId(c.getId());
+					//o_id p_id u_id o_quantity o_date price_at_purchase
+
+					order.setName(prodotto.getName());
 					order.setUid(user.getId());
 					order.setQuantity(c.getQuantity());
 					order.setDate(formatData.format(date));
+					order.setTotal(prodotto.getPrice()*c.getQuantity());
 
 					OrderDao oDao = new OrderDao(DbCon.getConnection());
 					boolean result = oDao.insertOrder(order);
