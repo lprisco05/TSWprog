@@ -22,6 +22,11 @@ if (auth != null) {
 <!DOCTYPE html>
 <html lang="it">
 <head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
 <meta charset="ISO-8859-1">
 <title>Payment Form</title>
 <style>
@@ -87,10 +92,12 @@ hr {
 }
 </style>
 <script src="JavaScript/ccvalidation.js" defer></script>
+
+<link rel = "stylesheet" href = "add-productSTYLE.css">
 </head>
 
 <body>
-	<form action="CashOut" method="post">
+	<form style="background-color:#4169E1" action="CashOut" method="post">
 		<h1>Inserisci dati pagamento</h1>
 		<p>I campi obbligatori sono seguiti da *</p>
 		<h3>Informazioni di Contatto</h3>
