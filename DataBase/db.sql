@@ -30,4 +30,10 @@ CREATE TABLE orders (
 
 INSERT INTO `users` VALUES (1,'admin','admin@mail.it',1,'asdqwe123');
 INSERT INTO `users` VALUES (2,'utente','utente@mail.it',0,'asdqwe123');
+INSERT INTO `products` VALUES (3,'Arduino Uno','Starter Kit', '100','Arduino.png');
+INSERT INTO `products` VALUES (4,'Cavi','Cavi', '0.50','Cavi.png');
+INSERT INTO `products` VALUES (5,'led','led', '0.10','led.png');
+INSERT INTO `products` VALUES (6,'Pulsante','pulsante', '1','Pulsante.png');
+INSERT INTO `products` VALUES (7,'Sensore','Sensore', '1','Sensore.png');
+INSERT INTO `products` VALUES (8,'Servomotore','Servomotore', '2','Servo.png');
 
