@@ -67,47 +67,6 @@ try {
 <%@include file="includes/header.jsp"%>
 <%@include file="includes/NavBar.jsp"%>
 
-<style>
-body {
-	font-family: Arial, sans-serif;
-	background-color: #f4f4f4;
-	margin: 0;
-	padding: 0;
-}
-label {
-	width: 150px;
-	display: inline-block;
-	text-align: left;
-}
-input[type="password"] {
-	width: 200px;
-}
-.container {
-	max-width: 600px;
-	margin: 50px auto;
-	background-color: #4169E1;
-	padding: 20px;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-h1 {
-	text-align: center;
-}
-.user-details {
-	margin-top: 20px;
-}
-.detail {
-	margin-bottom: 10px;
-}
-.detail label {
-	font-weight: bold;
-}
-.error-message {
-	color: red;
-	font-size: 14px;
-	margin-top: 5px;
-}
-</style>
 
 <link rel = "stylesheet" href = "userSTYLE.css">
 </head>

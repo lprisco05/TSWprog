@@ -7,22 +7,60 @@ body{
 	background-image: url('BG.jpg');
 	background-size: cover;
     background-repeat: repeat;
-    
     font-family: 'Pacifico', cursive;
     color: white;
-    animation: neon 5s infinite;
-    
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    height: 180vh;
 }
 
-@keyframes neon{
-	0%, 39%, 41%, 59%, 61%, 100%{
-		text-shadow:
-		white 0 0 12px,
-		black 0 0 24px,
-		black 0 0 36px;
-	}
-	
-	40%, 60% {
-	text-shadow: none;
-	}
+form {
+	background: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	max-width: 400px;
+	width: 100%;
+}
+
+h1, h2 {
+	color: #333;
+}
+
+p {
+	margin-bottom: 15px;
+}
+
+input[type="text"], input[type="number"], input[type="date"], input[type="password"],
+	select {
+	width: calc(100% - 22px);
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+input[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+hr {
+	margin: 20px 0;
+	border: 0;
+	border-top: 1px solid #ccc;
+}
+
+.error-message {
+	color: red;
+	font-size: 0.9em;
 }

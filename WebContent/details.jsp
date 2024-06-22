@@ -29,69 +29,10 @@ if (auth != null) {
 
 <meta charset="ISO-8859-1">
 <title>Payment Form</title>
-<style>
-body {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 180vh;
-}
 
-form {
-	background: white;
-	padding: 20px;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	max-width: 400px;
-	width: 100%;
-}
-
-h1, h2 {
-	color: #333;
-}
-
-p {
-	margin-bottom: 15px;
-}
-
-input[type="text"], input[type="number"], input[type="date"], input[type="password"],
-	select {
-	width: calc(100% - 22px);
-	padding: 10px;
-	margin-top: 5px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-}
-
-input[type="submit"] {
-	background-color: #4CAF50;
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
-input[type="submit"]:hover {
-	background-color: #45a049;
-}
-
-hr {
-	margin: 20px 0;
-	border: 0;
-	border-top: 1px solid #ccc;
-}
-
-.error-message {
-	color: red;
-	font-size: 0.9em;
-}
-</style>
 <script src="JavaScript/ccvalidation.js" defer></script>
 
-<link rel = "stylesheet" href = "add-productSTYLE.css">
+<link rel = "stylesheet" href = "detailsSTYLE.css">
 </head>
 
 <body>
