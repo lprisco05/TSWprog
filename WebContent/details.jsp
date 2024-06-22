@@ -92,10 +92,6 @@ if (auth != null) {
 		<div id="cvv-error" class="error-message"></div>
 		</p>
 
-		<div class="container">
-			<label for="myCheckbox">Ricordami:</label> <input type="checkbox"
-				id="rembemberCard">
-		</div>
 
 		<div class="text-xcenter">
 			<button type="submit" class="btn btn-primary">Conferma</button>
