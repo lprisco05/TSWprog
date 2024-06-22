@@ -100,7 +100,9 @@ public class OrderDao {
                 Order order = new Order();
                 order.setOrderId(rs.getInt("o_id"));
                 order.setName(rs.getString("p_name"));
-                order.setPrice(rs.getDouble("price_at_purchase"));
+                order.setUid(rs.getInt("u_id"));
+                System.out.println("questo è u.id = "+ order.getUid());
+                order.setTotal(rs.getDouble("price_at_purchase"));
                 order.setQuantity(rs.getInt("o_quantity"));
                 order.setDate(rs.getString("o_date"));
                 list.add(order);
@@ -124,7 +126,9 @@ public class OrderDao {
 	                Order order = new Order();
 	                order.setOrderId(rs.getInt("o_id"));
 	                order.setName(rs.getString("p_name"));
-	                order.setPrice(rs.getDouble("price_at_purchase"));
+	                order.setTotal(rs.getDouble("price_at_purchase"));
+	                order.setUid(rs.getInt("u_id"));
+	                System.out.println("questo è u.id = "+ order.getUid());
 	                order.setQuantity(rs.getInt("o_quantity"));
 	                order.setDate(rs.getString("o_date"));
 	                list.add(order);
@@ -148,7 +152,9 @@ public class OrderDao {
 	                Order order = new Order();
 	                order.setOrderId(rs.getInt("o_id"));
 	                order.setName(rs.getString("p_name"));
-	                order.setPrice(rs.getDouble("price_at_purchase"));
+	                order.setUid(rs.getInt("u_id"));
+	                System.out.println("questo è u.id = "+ order.getUid());
+	                order.setTotal(rs.getDouble("price_at_purchase"));
 	                order.setQuantity(rs.getInt("o_quantity"));
 	                order.setDate(rs.getString("o_date"));
 	                list.add(order);
@@ -158,4 +164,32 @@ public class OrderDao {
 	        }
 	        return list;
 	    }
+	    
+	    
+	 // Metodo per ottenere gli ordini in base alla data e all'email dell'utente
+	    public List<Order> getOrdersByDateAndUserEmail(String date, String email) {
+	        List<Order> list = new ArrayList<>();
+	        try {
+	            query = "select * from orders o join users u on o.u_id = u.id where o.o_date = ? and u.email = ? order by o.o_id desc";
+	            pst = this.con.prepareStatement(query);
+	            pst.setString(1, date);
+	            pst.setString(2, email);
+	            rs = pst.executeQuery();
+	            
+	            while (rs.next()) {
+	                Order order = new Order();
+	                order.setOrderId(rs.getInt("o_id"));
+	                order.setName(rs.getString("p_name"));
+	                order.setPrice(rs.getDouble("price_at_purchase"));
+	                order.setUid(rs.getInt("u_id"));
+	                order.setQuantity(rs.getInt("o_quantity"));
+	                order.setDate(rs.getString("o_date"));
+	                list.add(order);
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        return list;
+	    }
+
 }

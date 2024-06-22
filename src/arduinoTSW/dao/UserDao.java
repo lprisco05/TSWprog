@@ -47,6 +47,21 @@ public class UserDao {
 		
 		return user;
 	}
-	
+	public String getUserEmailById(int userId) {
+        String email = null;
+        try {
+            query = "select email from users where id = ?";
+            pst = this.con.prepareStatement(query);
+            pst.setInt(1, userId);
+            rs = pst.executeQuery();
+            
+            if (rs.next()) {
+                email = rs.getString("email");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return email;
+    }
 
 }

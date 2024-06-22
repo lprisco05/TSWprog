@@ -24,7 +24,10 @@ if (auth != null) {
         String date = request.getParameter("date");
         String userEmail = request.getParameter("email");
 
-        if (date != null && !date.isEmpty()) {
+        // Controlla se sia la data che l'email sono forniti
+        if (date != null && !date.isEmpty() && userEmail != null && !userEmail.isEmpty()) {
+            orders = orderDao.getOrdersByDateAndUserEmail(date, userEmail);
+        } else if (date != null && !date.isEmpty()) {
             orders = orderDao.getOrdersByDate(date);
         } else if (userEmail != null && !userEmail.isEmpty()) {
             orders = orderDao.getOrdersByUserEmail(userEmail);
@@ -82,6 +85,9 @@ if (cart_list != null) {
                     <th scope="col">Nome</th>
                     <th scope="col">Quantità</th>
                     <th scope="col">Prezzo</th>
+                    <% if (auth != null && auth.getAdmin()) { %>
+                        <th scope="col">Utente</th>
+                    <% } %>
                     <th scope="col">Cancellato</th>
                 </tr>
             </thead>
@@ -107,13 +113,16 @@ if (cart_list != null) {
                 </tr>
                 <%
                     for (Order o : ordersByDate.get(date)) {
-                    	System.out.println(o.toString());
+                        System.out.println(o.toString());
                 %>
                 <tr>
                     <td><%=o.getDate()%></td>
                     <td><%=o.getName()%></td>
                     <td><%=o.getQuantity()%></td>
                     <td><%=dcf.format(o.getTotal())%></td>
+                    <% if (auth != null && auth.getAdmin()) { %>
+                        <td><%=o.getUserEmailById()%></td>
+                    <% } %>
                     <td><a class="btn btn-sm btn-danger"
                         href="cancel-order?id=<%=o.getOrderId()%>">Cancel</a></td>
                 </tr>

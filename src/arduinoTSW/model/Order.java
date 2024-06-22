@@ -1,12 +1,17 @@
 package arduinoTSW.model;
 
+import java.sql.SQLException;
+
+import arduinoTSW.connection.DbCon;
+import arduinoTSW.dao.UserDao;
+
 public class Order extends Product {
 	//oid pname uid quantity pricealcomprare
 	private int orderId;
 	private int uid;
 	private int quantity;
 	private String date;
-	private Double total = 696969.0;
+	private Double total ;
 	private String p_name;
 	
 	public Order() {	
@@ -28,6 +33,7 @@ public class Order extends Product {
 		this.uid = uid;
 		this.quantity = quantity;
 		this.date = date;
+		this.total = this.getPrice();
 		
 	}
 
@@ -65,16 +71,31 @@ public class Order extends Product {
 
 	@Override
 	public String toString() {
-		return "Order [orderId=" + orderId + ", uid=" + uid + ", quantity=" + quantity + ", date=" + date + "]";
+		return "Order [orderId=" + orderId + ", uid=" + uid + ", quantity=" + quantity + ", date=" + date + "total=" + total + ""
+				+ "price =" + this.getPrice() + " ]";
 	}
 
 	public double getTotal() {
+		if(this.total!=null)
 		return this.total;
+		else {
+			return this.getPrice();
+		}
 	}
 
 	public void setTotal(Double double1) {
 		this.total = double1;
 	}
 	
-	
+	public String getUserEmailById() {
+		try {
+			UserDao udao = new UserDao(DbCon.getConnection());
+			return udao.getUserEmailById(this.getUid());
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return "ERRORRRE";
+		
+	}
 }
