@@ -9,7 +9,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id = "box">
 
 	<div class="container">
-		<a class="navbar-brand" href="index.jsp">Super Arduino</a>
+		<a class="navbar-brand" href="index.jsp">Arduino Buy</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
