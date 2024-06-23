@@ -63,11 +63,11 @@ if (cart_list != null) {
 
 				for (Product p : products) {
 			%>
-			<div class="col-md-3 my-3">
-				<div class="card w-100"
+			<div class="card-container">
+				<div class="card"
 					style="width: 300px; height: 500px; background-color: #4169E1">
 					<img class="card-img-top" src="product-image/<%=p.getImage()%>"
-						alt="Card image cap">
+						alt="Card image cap" width= 400px height = 250px>
 
 					<div class="card-body">
 						<h5 class="card-title"><%=p.getName()%></h5>

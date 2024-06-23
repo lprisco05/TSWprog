@@ -13,6 +13,14 @@ body{
     
 }
 
+.card-container {
+            display: flex; /* Per posizionare le card in linea */
+            flex-wrap: wrap; /* Per andare a capo se non c'è spazio */
+            gap: 20px; /* Spaziatura tra le card */
+            justify-content: center; /* Per centrare le card orizzontalmente */
+            padding: 20px; /* Spaziatura interna al contenitore */
+        }
+
 .navbar-light.bg-light
 {
 	background-color:  #4169E1 !important;
