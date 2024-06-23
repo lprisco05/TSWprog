@@ -12,7 +12,7 @@
 <title>User Registration</title>
 <%@include file="includes/header.jsp"%>
 
-<link rel = "stylesheet" href = "registerSTYLE.css">
+<link rel = "stylesheet" href = "FileCSS/registerSTYLE.css">
 </head>
 <body>
 	<%

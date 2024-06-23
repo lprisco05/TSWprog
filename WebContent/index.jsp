@@ -37,7 +37,7 @@ if (cart_list != null) {
 <title>Home</title>
 <%@include file="includes/header.jsp"%>
 
-<link rel="stylesheet" href="IndexSTYLE.css">
+<link rel="stylesheet" href="FileCSS/IndexSTYLE.css">
 </head>
 <body>
 	<%@include file="includes/NavBar.jsp"%>

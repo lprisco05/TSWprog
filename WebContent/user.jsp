@@ -68,7 +68,7 @@ try {
 <%@include file="includes/NavBar.jsp"%>
 
 
-<link rel = "stylesheet" href = "userSTYLE.css">
+<link rel = "stylesheet" href = "FileCSS/userSTYLE.css">
 </head>
 <body>
 	<div class="container">

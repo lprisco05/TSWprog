@@ -32,7 +32,7 @@ if (auth != null) {
 
 <script src="JavaScript/ccvalidation.js" defer></script>
 
-<link rel = "stylesheet" href = "detailsSTYLE.css">
+<link rel = "stylesheet" href = "FileCSS/detailsSTYLE.css">
 </head>
 
 <body>

@@ -60,7 +60,7 @@ if (cart_list != null) {
 <title>Orders</title>
 <%@include file="includes/header.jsp"%>
 
-<link rel = "stylesheet" href = "ordersSTYLE.css">
+<link rel = "stylesheet" href = "FileCSS/ordersSTYLE.css">
 </head>
 <body>
     <%@include file="includes/NavBar.jsp"%>

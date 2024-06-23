@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-image: url('BG.jpg');
+	background-size: cover;
+    background-repeat: repeat;
+    
+    font-family: 'Pacifico', cursive;
+    color: white;
+    
+    
+}
+
+.table tbody td {
+	vertical-align: middle;
+}
+
+.btn-incre, .btn-decre {
+	box-shadow: none;
+	font-size: 15px;
+}
+
+.vertical-buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.vertical-buttons .btn {
+	display: block;
+	padding: 0;
+	line-height: 0;
+}
+
+
+.navbar-light.bg-light
+{
+	background-color:  #4169E1 !important;
+}
+

@@ -34,7 +34,7 @@ if (auth != null) {
 <meta charset="ISO-8859-1">
 <title>Add Product</title>
 <%@include file="includes/header.jsp" %>
-<link rel = "stylesheet" href = "add-productSTYLE.css">
+<link rel = "stylesheet" href = "FileCSS/add-productSTYLE.css">
 </head>
 <body>
 <%@include file="includes/NavBar.jsp" %>

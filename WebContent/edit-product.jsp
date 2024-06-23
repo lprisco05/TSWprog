@@ -49,7 +49,7 @@ else if (auth != null) {
 <title>Edit Product</title>
 <%@include file="includes/header.jsp"%>
 
-<link rel = "stylesheet" href = "edit-productSTYLE.css">
+<link rel = "stylesheet" href = "FileCSS/edit-productSTYLE.css">
 </head>
 <body>
 	<%@include file="includes/NavBar.jsp"%>

@@ -44,29 +44,7 @@ if (cart_list != null) {
 <%@include file="includes/header.jsp"%>
 <!--da spostare questo css in file a parte-->
 
-<style type="text/css">
-.table tbody td {
-	vertical-align: middle;
-}
-
-.btn-incre, .btn-decre {
-	box-shadow: none;
-	font-size: 15px;
-}
-
-.vertical-buttons {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.vertical-buttons .btn {
-	display: block;
-	padding: 0;
-	line-height: 0;
-}
-</style>
-<link rel = "stylesheet" href = "CartSTYLE.css">
+<link rel = "stylesheet" href = "FileCSS/CartSTYLE.css">
 </head>
 <body>
 	<%@include file="includes/NavBar.jsp"%>
