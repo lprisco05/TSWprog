@@ -4,7 +4,6 @@
 <%@page import="arduinoTSW.dao.ProductDao" %>
 <%@page import="arduinoTSW.connection.DbCon" %>
 <%@page import="java.sql.Connection" %>
-
 <%@page import="arduinoTSW.model.*" %>
 
 

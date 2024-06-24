@@ -38,12 +38,12 @@ INSERT INTO `users` VALUES
 (7,'Charlie Davis','charlie.davis@mail.it',0,'password123');
 
 
-INSERT INTO `products` VALUES (3,'Arduino Uno','Starter Kit', '100','Arduino.png');
-INSERT INTO `products` VALUES (4,'Cavi','Cavi', '0.50','Cavi.png');
-INSERT INTO `products` VALUES (5,'led','led', '0.10','led.png');
-INSERT INTO `products` VALUES (6,'Pulsante','pulsante', '1','Pulsante.png');
-INSERT INTO `products` VALUES (7,'Sensore','Sensore', '1','Sensore.png');
-INSERT INTO `products` VALUES (8,'Servomotore','Servomotore', '2','Servo.png');
+INSERT INTO `products` VALUES (3,'Arduino Uno','Scheda utile per la programmazione di piccoli circuiti', '100','Arduino.png');
+INSERT INTO `products` VALUES (4,'Cavi','Set di 15 cavi, lunghi 30cm e collegabili ad una scheda arduino o breadboard', '0.50','Cavi.png');
+INSERT INTO `products` VALUES (5,'led','Piccoli led collegabili ad una breadboard o ad una scheda arduino', '0.10','led.png');
+INSERT INTO `products` VALUES (6,'Pulsante','Piccolo pulsante collegabile ad una breadboard', '1','Pulsante.png');
+INSERT INTO `products` VALUES (7,'Sensore','Sensore che utilizza gli ultrasuoni per misurare la distanza da un oggetto vicino', '1','Sensore.png');
+INSERT INTO `products` VALUES (8,'Servomotore','Piccolo motore da 5 volt e con capacità di 6500 rivoluzioni al minuto', '2','Servo.png');
 
 -- Populating the orders table with more orders
 INSERT INTO `orders` (p_name, u_id, o_quantity, o_date, price_at_purchase) VALUES
